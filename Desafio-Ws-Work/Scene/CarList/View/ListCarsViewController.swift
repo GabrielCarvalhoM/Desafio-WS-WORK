@@ -22,6 +22,7 @@ class ListCarsViewController: UIViewController {
         return tv
     }()
     
+    //didLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .green
@@ -71,11 +72,16 @@ extension ListCarsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CustomCell.identifier, for: indexPath) as? CustomCell
         
-        cell?.labelteste.text = "\(listCars[indexPath.row].fipeValue)"
+        cell?.labelteste.text = listCars[indexPath.row].branch
         
     
         return cell!
         
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = DetailViewController(car: listCars[indexPath.row])
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }

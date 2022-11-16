@@ -7,23 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B2E257129246C1C0003D2FD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2E257029246C1C0003D2FD /* DetailViewController.swift */; };
 		9BE901AD2923110D009EA5F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE901AC2923110D009EA5F1 /* AppDelegate.swift */; };
 		9BE901AF2923110D009EA5F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE901AE2923110D009EA5F1 /* SceneDelegate.swift */; };
-		9BE901B12923110D009EA5F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE901B02923110D009EA5F1 /* ViewController.swift */; };
-		9BE901B42923110D009EA5F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BE901B22923110D009EA5F1 /* Main.storyboard */; };
+		9BE901B12923110D009EA5F1 /* ListCarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE901B02923110D009EA5F1 /* ListCarsViewController.swift */; };
 		9BE901B62923110F009EA5F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BE901B52923110F009EA5F1 /* Assets.xcassets */; };
 		9BE901B92923110F009EA5F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BE901B72923110F009EA5F1 /* LaunchScreen.storyboard */; };
+		9BE901C229231261009EA5F1 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE901C129231261009EA5F1 /* Api.swift */; };
+		9BE901C729231577009EA5F1 /* CarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE901C629231576009EA5F1 /* CarModel.swift */; };
+		9BE901CA292319BE009EA5F1 /* CustomCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE901C9292319BE009EA5F1 /* CustomCellTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B2E257029246C1C0003D2FD /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		9BE901A92923110D009EA5F1 /* Desafio-Ws-Work.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Desafio-Ws-Work.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BE901AC2923110D009EA5F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BE901AE2923110D009EA5F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9BE901B02923110D009EA5F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9BE901B32923110D009EA5F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9BE901B02923110D009EA5F1 /* ListCarsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCarsViewController.swift; sourceTree = "<group>"; };
 		9BE901B52923110F009EA5F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9BE901B82923110F009EA5F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9BE901BA2923110F009EA5F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BE901C129231261009EA5F1 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		9BE901C629231576009EA5F1 /* CarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModel.swift; sourceTree = "<group>"; };
+		9BE901C9292319BE009EA5F1 /* CustomCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +43,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B2E256E29246BED0003D2FD /* CarDetail */ = {
+			isa = PBXGroup;
+			children = (
+				9B2E256F29246BF70003D2FD /* View */,
+			);
+			path = CarDetail;
+			sourceTree = "<group>";
+		};
+		9B2E256F29246BF70003D2FD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9B2E257029246C1C0003D2FD /* DetailViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		9BE901A02923110D009EA5F1 = {
 			isa = PBXGroup;
 			children = (
@@ -56,15 +78,58 @@
 		9BE901AB2923110D009EA5F1 /* Desafio-Ws-Work */ = {
 			isa = PBXGroup;
 			children = (
+				9BE901C32923155B009EA5F1 /* Scene */,
+				9BE901C029231254009EA5F1 /* Api */,
 				9BE901AC2923110D009EA5F1 /* AppDelegate.swift */,
 				9BE901AE2923110D009EA5F1 /* SceneDelegate.swift */,
-				9BE901B02923110D009EA5F1 /* ViewController.swift */,
-				9BE901B22923110D009EA5F1 /* Main.storyboard */,
 				9BE901B52923110F009EA5F1 /* Assets.xcassets */,
 				9BE901B72923110F009EA5F1 /* LaunchScreen.storyboard */,
 				9BE901BA2923110F009EA5F1 /* Info.plist */,
 			);
 			path = "Desafio-Ws-Work";
+			sourceTree = "<group>";
+		};
+		9BE901C029231254009EA5F1 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				9BE901C129231261009EA5F1 /* Api.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		9BE901C32923155B009EA5F1 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				9B2E256E29246BED0003D2FD /* CarDetail */,
+				9BE901C429231560009EA5F1 /* CarList */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		9BE901C429231560009EA5F1 /* CarList */ = {
+			isa = PBXGroup;
+			children = (
+				9BE901C8292319A2009EA5F1 /* View */,
+				9BE901C52923156A009EA5F1 /* Model */,
+			);
+			path = CarList;
+			sourceTree = "<group>";
+		};
+		9BE901C52923156A009EA5F1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9BE901C629231576009EA5F1 /* CarModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9BE901C8292319A2009EA5F1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9BE901B02923110D009EA5F1 /* ListCarsViewController.swift */,
+				9BE901C9292319BE009EA5F1 /* CustomCellTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +192,6 @@
 			files = (
 				9BE901B92923110F009EA5F1 /* LaunchScreen.storyboard in Resources */,
 				9BE901B62923110F009EA5F1 /* Assets.xcassets in Resources */,
-				9BE901B42923110D009EA5F1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +202,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BE901B12923110D009EA5F1 /* ViewController.swift in Sources */,
+				9BE901B12923110D009EA5F1 /* ListCarsViewController.swift in Sources */,
+				9BE901C729231577009EA5F1 /* CarModel.swift in Sources */,
+				9BE901CA292319BE009EA5F1 /* CustomCellTableViewCell.swift in Sources */,
+				9BE901C229231261009EA5F1 /* Api.swift in Sources */,
 				9BE901AD2923110D009EA5F1 /* AppDelegate.swift in Sources */,
 				9BE901AF2923110D009EA5F1 /* SceneDelegate.swift in Sources */,
+				9B2E257129246C1C0003D2FD /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		9BE901B22923110D009EA5F1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9BE901B32923110D009EA5F1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		9BE901B72923110F009EA5F1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -292,7 +352,6 @@
 				INFOPLIST_FILE = "Desafio-Ws-Work/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -320,7 +379,6 @@
 				INFOPLIST_FILE = "Desafio-Ws-Work/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
