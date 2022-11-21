@@ -11,10 +11,24 @@ class CustomCell: UITableViewCell {
     
     var car: CarModel?
     
-    lazy var labelteste: UILabel = {
+    lazy var bgView: UIView = {
+        
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.layer.cornerRadius = 25
+        view.clipsToBounds = true
+        view.backgroundColor = .white
+        
+       return view
+    }()
+    
+    lazy var branchLabel: UILabel = {
         
         let lb = UILabel()
-        lb.text = "teste"
+        lb.text = " "
+        lb.font = .systemFont(ofSize: 30)
+        lb.textAlignment = .center
+        lb.textColor = .systemMint
         lb.translatesAutoresizingMaskIntoConstraints = false
         
        return lb
@@ -25,7 +39,10 @@ class CustomCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.addSubview(labelteste)
+        self.selectionStyle = .none
+        self.backgroundColor = UIColor(named: "backGroundListColor")?.withAlphaComponent(0.0)
+        self.addSubview(bgView)
+        self.addSubview(branchLabel)
         
         setupConstraints()
     }
@@ -37,16 +54,16 @@ class CustomCell: UITableViewCell {
     private func setupConstraints() {
         NSLayoutConstraint.activate([
         
-            self.labelteste.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            self.labelteste.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-        
+            self.branchLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            self.branchLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            
+            self.bgView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
+            self.bgView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            self.bgView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
+            self.bgView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20)
+            
+
         ])
-        
-    }
-    
-    private func setFipeValue(_ value:Double?) {
-        
-        
         
     }
     

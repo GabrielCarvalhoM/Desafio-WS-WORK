@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B00C583292589E90004AA93 /* ConfirmBuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B00C582292589E90004AA93 /* ConfirmBuyViewController.swift */; };
+		9B00C5872925957B0004AA93 /* ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B00C5862925957B0004AA93 /* ShowAlert.swift */; };
+		9B00C58A2925BAD20004AA93 /* dataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B00C5882925BAD10004AA93 /* dataModel.xcdatamodeld */; };
+		9B0ACD4F2929B00800333433 /* EmptyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0ACD4E2929B00800333433 /* EmptyModel.swift */; };
+		9B28E51E292652D20077869B /* Lead+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B28E51C292652D20077869B /* Lead+CoreDataClass.swift */; };
+		9B28E51F292652D20077869B /* Lead+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B28E51D292652D20077869B /* Lead+CoreDataProperties.swift */; };
+		9B28E523292653D50077869B /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B28E522292653D50077869B /* DBManager.swift */; };
+		9B2B56272927B02600AE35B3 /* ControlRotine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2B56262927B02600AE35B3 /* ControlRotine.swift */; };
 		9B2E257129246C1C0003D2FD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2E257029246C1C0003D2FD /* DetailViewController.swift */; };
 		9BE901AD2923110D009EA5F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE901AC2923110D009EA5F1 /* AppDelegate.swift */; };
 		9BE901AF2923110D009EA5F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE901AE2923110D009EA5F1 /* SceneDelegate.swift */; };
@@ -19,6 +27,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B00C582292589E90004AA93 /* ConfirmBuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmBuyViewController.swift; sourceTree = "<group>"; };
+		9B00C5862925957B0004AA93 /* ShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAlert.swift; sourceTree = "<group>"; };
+		9B00C5892925BAD20004AA93 /* dataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = dataModel.xcdatamodel; sourceTree = "<group>"; };
+		9B0ACD4E2929B00800333433 /* EmptyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyModel.swift; sourceTree = "<group>"; };
+		9B28E51C292652D20077869B /* Lead+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Lead+CoreDataClass.swift"; path = "Desafio-Ws-Work/CD/Lead+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		9B28E51D292652D20077869B /* Lead+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Lead+CoreDataProperties.swift"; path = "Desafio-Ws-Work/CD/Lead+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		9B28E522292653D50077869B /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		9B2B56262927B02600AE35B3 /* ControlRotine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlRotine.swift; sourceTree = "<group>"; };
 		9B2E257029246C1C0003D2FD /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		9BE901A92923110D009EA5F1 /* Desafio-Ws-Work.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Desafio-Ws-Work.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BE901AC2923110D009EA5F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +59,64 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B00C580292589A60004AA93 /* ConfirmBuy */ = {
+			isa = PBXGroup;
+			children = (
+				9B00C581292589C00004AA93 /* View */,
+			);
+			path = ConfirmBuy;
+			sourceTree = "<group>";
+		};
+		9B00C581292589C00004AA93 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9B00C582292589E90004AA93 /* ConfirmBuyViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9B00C584292595660004AA93 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9B00C5852925956C0004AA93 /* Alert */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9B00C5852925956C0004AA93 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				9B00C5862925957B0004AA93 /* ShowAlert.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		9B28E5202926538C0077869B /* CD */ = {
+			isa = PBXGroup;
+			children = (
+				9B28E51D292652D20077869B /* Lead+CoreDataProperties.swift */,
+				9B28E51C292652D20077869B /* Lead+CoreDataClass.swift */,
+			);
+			path = CD;
+			sourceTree = "<group>";
+		};
+		9B28E521292653980077869B /* DBManager */ = {
+			isa = PBXGroup;
+			children = (
+				9B28E522292653D50077869B /* DBManager.swift */,
+			);
+			path = DBManager;
+			sourceTree = "<group>";
+		};
+		9B2B56252927B01800AE35B3 /* ControlRotine */ = {
+			isa = PBXGroup;
+			children = (
+				9B2B56262927B02600AE35B3 /* ControlRotine.swift */,
+				9B0ACD4E2929B00800333433 /* EmptyModel.swift */,
+			);
+			path = ControlRotine;
+			sourceTree = "<group>";
+		};
 		9B2E256E29246BED0003D2FD /* CarDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -78,13 +152,18 @@
 		9BE901AB2923110D009EA5F1 /* Desafio-Ws-Work */ = {
 			isa = PBXGroup;
 			children = (
-				9BE901C32923155B009EA5F1 /* Scene */,
+				9B2B56252927B01800AE35B3 /* ControlRotine */,
+				9B28E5202926538C0077869B /* CD */,
 				9BE901C029231254009EA5F1 /* Api */,
+				9B28E521292653980077869B /* DBManager */,
+				9B00C584292595660004AA93 /* Extensions */,
+				9BE901C32923155B009EA5F1 /* Scene */,
 				9BE901AC2923110D009EA5F1 /* AppDelegate.swift */,
 				9BE901AE2923110D009EA5F1 /* SceneDelegate.swift */,
 				9BE901B52923110F009EA5F1 /* Assets.xcassets */,
 				9BE901B72923110F009EA5F1 /* LaunchScreen.storyboard */,
 				9BE901BA2923110F009EA5F1 /* Info.plist */,
+				9B00C5882925BAD10004AA93 /* dataModel.xcdatamodeld */,
 			);
 			path = "Desafio-Ws-Work";
 			sourceTree = "<group>";
@@ -100,6 +179,7 @@
 		9BE901C32923155B009EA5F1 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				9B00C580292589A60004AA93 /* ConfirmBuy */,
 				9B2E256E29246BED0003D2FD /* CarDetail */,
 				9BE901C429231560009EA5F1 /* CarList */,
 			);
@@ -203,11 +283,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BE901B12923110D009EA5F1 /* ListCarsViewController.swift in Sources */,
+				9B28E51F292652D20077869B /* Lead+CoreDataProperties.swift in Sources */,
 				9BE901C729231577009EA5F1 /* CarModel.swift in Sources */,
+				9B28E523292653D50077869B /* DBManager.swift in Sources */,
 				9BE901CA292319BE009EA5F1 /* CustomCellTableViewCell.swift in Sources */,
+				9B2B56272927B02600AE35B3 /* ControlRotine.swift in Sources */,
 				9BE901C229231261009EA5F1 /* Api.swift in Sources */,
+				9B00C5872925957B0004AA93 /* ShowAlert.swift in Sources */,
+				9B00C58A2925BAD20004AA93 /* dataModel.xcdatamodeld in Sources */,
 				9BE901AD2923110D009EA5F1 /* AppDelegate.swift in Sources */,
+				9B0ACD4F2929B00800333433 /* EmptyModel.swift in Sources */,
+				9B28E51E292652D20077869B /* Lead+CoreDataClass.swift in Sources */,
 				9BE901AF2923110D009EA5F1 /* SceneDelegate.swift in Sources */,
+				9B00C583292589E90004AA93 /* ConfirmBuyViewController.swift in Sources */,
 				9B2E257129246C1C0003D2FD /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,6 +504,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9B00C5882925BAD10004AA93 /* dataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9B00C5892925BAD20004AA93 /* dataModel.xcdatamodel */,
+			);
+			currentVersion = 9B00C5892925BAD20004AA93 /* dataModel.xcdatamodel */;
+			path = dataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9BE901A12923110D009EA5F1 /* Project object */;
 }

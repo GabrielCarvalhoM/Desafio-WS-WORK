@@ -9,165 +9,197 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-    var car: CarModel
+    var currentCar: CarModel
     
+    //MARK: - labels de títulos.
+    
+            //nome
     lazy var nameLabel: UILabel = {
        
         let lb = UILabel()
         lb.translatesAutoresizingMaskIntoConstraints = false
         lb.text = "Marca"
         lb.font = .boldSystemFont(ofSize: 30)
-        lb.textColor = .brown
+        lb.textColor = .white
         return lb
         
     }()
-    
-    lazy var NameText: UILabel = {
-       
-        let lb = UILabel()
-        lb.translatesAutoresizingMaskIntoConstraints = false
-        lb.text = " "
-        return lb
-        
-    }()
-    
+            //marca
     lazy var branchLabel: UILabel = {
        
         let lb = UILabel()
         lb.translatesAutoresizingMaskIntoConstraints = false
         lb.text = "Modelo"
         lb.font = .boldSystemFont(ofSize: 30)
-        lb.textColor = .brown
+        lb.textColor = .white
         return lb
         
     }()
-    
-    lazy var branchText: UILabel = {
-       
-        let lb = UILabel()
-        lb.translatesAutoresizingMaskIntoConstraints = false
-        lb.text = " "
-        return lb
-        
-    }()
-    
+            //ano
     lazy var yearLabel: UILabel = {
        
         let lb = UILabel()
         lb.translatesAutoresizingMaskIntoConstraints = false
         lb.text = "Ano"
         lb.font = .boldSystemFont(ofSize: 30)
-        lb.textColor = .brown
+        lb.textColor = .white
         return lb
         
     }()
-    
-    lazy var yearText: UILabel = {
-       
-        let lb = UILabel()
-        lb.translatesAutoresizingMaskIntoConstraints = false
-        lb.text = " "
-        return lb
-        
-    }()
-    
+            //combustível
     lazy var fuelTypeLabel: UILabel = {
        
         let lb = UILabel()
         lb.translatesAutoresizingMaskIntoConstraints = false
         lb.text = "Tipo de combustível"
         lb.font = .boldSystemFont(ofSize: 30)
-        lb.textColor = .brown
+        lb.textColor = .white
         return lb
         
     }()
-    
-    lazy var fuelTypeText: UILabel = {
-       
-        let lb = UILabel()
-        lb.translatesAutoresizingMaskIntoConstraints = false
-        lb.text = " "
-        return lb
-        
-    }()
-    
+            //número de portas
     lazy var doorsNumberLabel: UILabel = {
        
         let lb = UILabel()
         lb.translatesAutoresizingMaskIntoConstraints = false
         lb.text = "Número de portas"
         lb.font = .boldSystemFont(ofSize: 30)
-        lb.textColor = .brown
+        lb.textColor = .white
         return lb
         
     }()
-    
-    lazy var doorsNumberText: UILabel = {
-       
-        let lb = UILabel()
-        lb.translatesAutoresizingMaskIntoConstraints = false
-        lb.text = " "
-        return lb
-        
-    }()
-    
+            //cor
     lazy var colorLabel: UILabel = {
        
         let lb = UILabel()
         lb.translatesAutoresizingMaskIntoConstraints = false
         lb.text = "Cor do veículo"
         lb.font = .boldSystemFont(ofSize: 30)
-        lb.textColor = .brown
+        lb.textColor = .white
         return lb
         
     }()
     
+    //MARK: - labels que recebem valores  do currentCar.
+            
+            //nome
+    lazy var NameText: UILabel = {
+       
+        let lb = UILabel()
+        lb.translatesAutoresizingMaskIntoConstraints = false
+        lb.text = " "
+        lb.textColor = .white
+        return lb
+        
+    }()
+            //marca
+    lazy var branchText: UILabel = {
+       
+        let lb = UILabel()
+        lb.translatesAutoresizingMaskIntoConstraints = false
+        lb.text = " "
+        lb.textColor = .white
+        return lb
+        
+    }()
+            //ano
+    lazy var yearText: UILabel = {
+       
+        let lb = UILabel()
+        lb.translatesAutoresizingMaskIntoConstraints = false
+        lb.text = " "
+        lb.textColor = .white
+        return lb
+        
+    }()
+            //combustível
+    lazy var fuelTypeText: UILabel = {
+       
+        let lb = UILabel()
+        lb.translatesAutoresizingMaskIntoConstraints = false
+        lb.text = " "
+        lb.textColor = .white
+        return lb
+        
+    }()
+            //número de portas
+    lazy var doorsNumberText: UILabel = {
+       
+        let lb = UILabel()
+        lb.translatesAutoresizingMaskIntoConstraints = false
+        lb.text = " "
+        lb.textColor = .white
+        return lb
+        
+    }()
+            //cor
     lazy var colorText: UILabel = {
        
         let lb = UILabel()
         lb.translatesAutoresizingMaskIntoConstraints = false
         lb.text = " "
+        lb.textColor = .white
         return lb
         
     }()
     
+    //MARK: - Botão
+    
+            //botão "eu quero"
     lazy var saveLeadButton: UIButton = {
        
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setTitle("EU QUERO!!", for: .normal)
-        btn.backgroundColor = .green
+        btn.backgroundColor = .darkGray
         btn.layer.cornerRadius = 15
         btn.clipsToBounds = true
+        btn.addTarget(self, action: #selector(buttonDidTapped), for: .touchUpInside)
         
         return btn
     }()
    
-
+    
+    //MARK: - didLoad
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .white
-        NameText.text = car.branch
-        branchText.text = car.model
-        yearText.text = car.year
-        fuelTypeText.text = car.fuelType
-        doorsNumberText.text = "\(car.doorsNumber)"
-        colorText.text = car.color
+        view.backgroundColor = .systemMint
         
+        setupLabels()
         setupSubViews()
         setupConstraints()
-        
-        
+
     }
     
     init(car: CarModel) {
-        self.car = car
+        self.currentCar = car
         super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }	
+    
+    @objc func buttonDidTapped() {
+        
+        let vc = ConfirmBuyViewController(car: currentCar)
+        if let presentationController = vc.presentationController as? UISheetPresentationController {
+            presentationController.detents = [.medium()]
+                }
+        present(vc, animated: true)
+        
+    }
+    
+    //MARK: - SETUPS
+    
+    private func setupLabels() {
+        NameText.text = currentCar.branch
+        branchText.text = currentCar.model
+        yearText.text = currentCar.year
+        fuelTypeText.text = currentCar.fuelType
+        doorsNumberText.text = "\(currentCar.doorsNumber)"
+        colorText.text = currentCar.color
     }
     
     private func setupSubViews() {

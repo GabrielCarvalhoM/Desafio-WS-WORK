@@ -13,24 +13,33 @@ class ListCarsViewController: UIViewController {
     var api = Api()
     private var listCars = [CarModel]()
     
+    //MARK: - tableView
     
-    //tableView
+            //tabela com lista de carros
     lazy var tableView: UITableView = {
         let tv = UITableView()
         tv.translatesAutoresizingMaskIntoConstraints = false
+        tv.separatorStyle = .none
+        tv.backgroundColor = UIColor(named: "backGroundListColor")
         tv.register(CustomCell.self, forCellReuseIdentifier: CustomCell.identifier)
         return tv
     }()
     
-    //didLoad
+    //MARK: - didLoad
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .green
+        navigationItem.title = "Carros"
+
         tableView.dataSource = self
         tableView.delegate = self
         view.addSubview(tableView)
-
-        api.execute(model: [CarModel].self) { [weak self] result in
+        
+        api.execute(model: [CarModel].self,
+                    method: .get,
+                    body: nil,
+                    headers: nil,
+                    url: .getUrl) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let response):
@@ -43,11 +52,12 @@ class ListCarsViewController: UIViewController {
             }
         }
         
-        
         setupConstraints()
         
     }
     
+    //MARK: - setups
+            //setup das constraints
     func setupConstraints() {
         NSLayoutConstraint.activate([
             self.tableView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -58,9 +68,11 @@ class ListCarsViewController: UIViewController {
         ])
     }
 
-
 }
 
+    //MARK: - extensions
+
+            //extesion para manipulação dos métodos próprios da tableView.
 extension ListCarsViewController: UITableViewDelegate, UITableViewDataSource {
     
     
@@ -68,12 +80,10 @@ extension ListCarsViewController: UITableViewDelegate, UITableViewDataSource {
         listCars.count
     }
     
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CustomCell.identifier, for: indexPath) as? CustomCell
         
-        cell?.labelteste.text = listCars[indexPath.row].branch
-        
+        cell?.branchLabel.text = listCars[indexPath.row].branch
     
         return cell!
         
@@ -82,6 +92,10 @@ extension ListCarsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = DetailViewController(car: listCars[indexPath.row])
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
     
 }
