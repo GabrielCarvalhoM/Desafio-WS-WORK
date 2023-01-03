@@ -8,10 +8,10 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
+    
     var window: UIWindow?
-
-
+    
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
         
@@ -21,12 +21,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         self.window = window
         
-        let controller = ListCarsViewController()
+        let viewModel = ListCarsViewModel()
+        let controller = ListCarsViewController(viewModel: viewModel)
         
         let navigation = UINavigationController(rootViewController: controller)
         window.rootViewController = navigation
         window.makeKeyAndVisible()
+        
     }
-
+    
 }
 

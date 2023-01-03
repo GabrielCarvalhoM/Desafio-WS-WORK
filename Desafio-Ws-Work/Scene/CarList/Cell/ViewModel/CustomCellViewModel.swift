@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct CustomCellViewModel{
+    
+    var branch: String
+    var name: String
+    
+}
