@@ -11,7 +11,7 @@ import CoreData
 class ConfirmBuyViewController: UIViewController {
     
     var leads = [Lead]()
-    var car: CarModel
+    var car: CarModel	
     
     //MARK: - UILABELS.
     
